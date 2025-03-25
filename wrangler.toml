@@ -1,0 +1,8 @@
+name = "cloudflare-next"
+compatibility_date = "2025-03-25"
+
+[build]
+command = "npm run build && npx @cloudflare/next-on-pages"
+
+[site]
+bucket = ".vercel/output"
