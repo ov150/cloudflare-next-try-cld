@@ -2,12 +2,13 @@ name = "cloudflare-next"
 compatibility_date = "2025-03-25"
 
 [build]
-command = "npx --yes n@20.10.0 && npm run build && npx @cloudflare/next-on-pages"
+command = "npx --yes n@20.10.0 && npx n 20.10.0 && npm run build && npx @cloudflare/next-on-pages"
 
 [site]
-bucket = ".vercel/output"
+bucket = ".vercel/output/static"   # Use /static for static pages
+pages_build_output_dir = ".vercel/output"  # Specify the correct build output
 
 [env.production]
 node_compat = true
 compatibility_flags = ["nodejs_compat"]
-node_version = "20.10.0" # Or the latest supported version
+node_version = "20.10.0"  # Force Node.js 20.10.0
